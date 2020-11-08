@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import VideoText from './VideoText';
 
 function App() {
+  // PROPS - proprietà
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <VideoText title="four seasons - vivaldi" color="blue" />
+      <VideoText title="The best of vivaldi" views="33M" published="7 years ago" color="green" />
+      <VideoText title="vivaldi - classical music for relax" views="" color="white" />
+      <VideoText title="Vivaldi: la follia" color="red" />
     </div>
   );
 }
+
+
 
 export default App;
