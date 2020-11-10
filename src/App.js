@@ -1,14 +1,14 @@
-import VideoText from './VideoText';
+import {useState} from 'react';
 
 function App() {
-  // Eventi
-  const saluta = (nome) => {
-    console.log(`ciao ${nome}`)
+  const [numero, setNumero] = useState(0)
+  const aumentaNumero = () => {
+    setNumero(numero / 2)
   }
   return (
     <div className="App">
-      <button onClick={() => saluta('vbilly')}>click me</button>
-      <VideoText title="four seasons - vivaldi" color="blue" />
+      <button onClick={aumentaNumero}>aumenta numero</button>
+      <h3>ciao {numero}</h3>
     </div>
   );
 }
