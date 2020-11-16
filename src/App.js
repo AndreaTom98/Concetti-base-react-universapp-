@@ -24,6 +24,12 @@ function App() {
     setColor("")
   }
 
+  const deleteVideo = (id) => {
+    setVideoList( videoList.filter(function(video) {
+      return video.id !== id
+    }))
+
+  }
   return (
     <div className="App">
     <h3>Scrivi il titolo</h3>
@@ -32,7 +38,7 @@ function App() {
      <input type="text" onChange={handleColor} value={color} />
      <button onClick={createVideoHandler}>Crea nuovo video</button>
      {videoList.map(function(video) {
-       return <VideoText key={video.id} title={video.title} color={video.color} />
+       return <VideoText deleteVideo={() => deleteVideo(video.id)} key={video.id} title={video.title} color={video.color} />
      })}
     </div>
   );

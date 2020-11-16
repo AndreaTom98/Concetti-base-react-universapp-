@@ -1,10 +1,11 @@
 
 
-function VideoText({title, color}) {
+function VideoText({title, color, deleteVideo}) {
     return (
         <div style={{display: 'flex'}}>
             <div style={{padding: '30px', background: color}}>
                 <h1>image</h1>
+                <button onClick={deleteVideo}>cancella video</button>
             </div>
             <div>
                 <h1>{title}</h1>
