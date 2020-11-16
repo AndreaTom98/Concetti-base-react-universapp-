@@ -2,28 +2,37 @@ import {useState} from 'react';
 import VideoText from './VideoText';
 
 function App() {
-  const [text, setText] = useState("");
-  const [textList, setTextList] = useState([])
-  const onChangeHandler = (e) => {
-    setText(e.target.value)
-  }
-  const addTextHandler = () => {
-    setTextList([...textList, text]);
-    // 1. ...textList => copia l'array attuale
-    // 2. text => aggiunge text a textList
+  const [title, setTitle] = useState("");
+  const [color, setColor] = useState("");
+  const [videoList, setVideoList] = useState([]);
 
-    setText("")
+  const handleTitle = (e) => {
+    setTitle(e.target.value)
+  
+  }
+  const handleColor = (e) => {
+    setColor(e.target.value)
+  }
+
+  // 1. Creiamo la lista di video con le loro proprieta
+  // 2. Facciamo vedere nella UI i nostri video 
+
+  const createVideoHandler = () => {
+    setVideoList([...videoList, {title: title, color: color}])
+    setTitle("");
+    setColor("")
   }
 
   return (
     <div className="App">
-     <input type="text" onChange={onChangeHandler} value={text} />
-     <button onClick={addTextHandler}>aggiungi text</button>
-     <ul>
-     {textList.map(function(text) {
-       return <li>{text}</li>
+    <h3>Scrivi il titolo</h3>
+     <input type="text" onChange={handleTitle} value={title} />
+     <h3>scrivi il colore</h3>
+     <input type="text" onChange={handleColor} value={color} />
+     <button onClick={createVideoHandler}>Crea nuovo video</button>
+     {videoList.map(function(video) {
+       return <VideoText title={video.title} color={video.color} />
      })}
-     </ul>
     </div>
   );
 }
