@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import VideoText from './VideoText';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [title, setTitle] = useState("");
@@ -18,7 +19,7 @@ function App() {
   // 2. Facciamo vedere nella UI i nostri video 
 
   const createVideoHandler = () => {
-    setVideoList([...videoList, {title: title, color: color}])
+    setVideoList([...videoList, {title: title, color: color, id: uuidv4()}])
     setTitle("");
     setColor("")
   }
@@ -31,7 +32,7 @@ function App() {
      <input type="text" onChange={handleColor} value={color} />
      <button onClick={createVideoHandler}>Crea nuovo video</button>
      {videoList.map(function(video) {
-       return <VideoText title={video.title} color={video.color} />
+       return <VideoText key={video.id} title={video.title} color={video.color} />
      })}
     </div>
   );
