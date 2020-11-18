@@ -1,4 +1,4 @@
-
+import style from './style/VideoText.module.css'
 
 function VideoText({title, color, deleteVideo}) {
     return (
@@ -8,7 +8,7 @@ function VideoText({title, color, deleteVideo}) {
                 <button onClick={deleteVideo}>cancella video</button>
             </div>
             <div>
-                <h1>{title}</h1>
+                <h1 className={style.title}>{title}</h1>
                 <h4>3m - 6 novembre</h4>
                 <h2>Vivaldi</h2>
             </div>

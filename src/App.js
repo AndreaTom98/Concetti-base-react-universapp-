@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import VideoText from './VideoText';
 import { v4 as uuidv4 } from 'uuid';
+import style from './style/App.module.css';
 
 function App() {
   const [title, setTitle] = useState("");
@@ -28,13 +29,16 @@ function App() {
     setVideoList( videoList.filter(function(video) {
       return video.id !== id
     }))
-
   }
+  // 1. inline style
+  // 2. File css tramite ID e CLASSNAME
+  // 3. CSS module
   return (
     <div className="App">
-    <h3>Scrivi il titolo</h3>
+    <h1 className={style.title}>Youtube fake video</h1>
+    <h3 className={style.paragraph}>Scrivi il titolo</h3>
      <input type="text" onChange={handleTitle} value={title} />
-     <h3>scrivi il colore</h3>
+     <h3 className={style.paragraph}>scrivi il colore</h3>
      <input type="text" onChange={handleColor} value={color} />
      <button onClick={createVideoHandler}>Crea nuovo video</button>
      {videoList.map(function(video) {
