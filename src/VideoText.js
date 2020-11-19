@@ -1,4 +1,6 @@
 import style from './style/VideoText.module.css'
+import styled from 'styled-components'
+
 
 function VideoText({title, color, deleteVideo}) {
     return (

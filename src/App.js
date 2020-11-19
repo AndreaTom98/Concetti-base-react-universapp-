@@ -33,6 +33,8 @@ function App() {
   // 1. inline style
   // 2. File css tramite ID e CLASSNAME
   // 3. CSS module
+  // 4. CSS in JS (diverse librerie => Styled Components)
+  // 5. SASS
   return (
     <div className="App">
     <h1 className={style.title}>Youtube fake video</h1>
