@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import style from "./style/VideoText.module.css";
 import styled, {css} from "styled-components";
 

@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import VideoText from './VideoText';
 import { v4 as uuidv4 } from 'uuid';
 import style from './style/App.module.css';
@@ -7,6 +7,10 @@ function App() {
   const [title, setTitle] = useState("");
   const [color, setColor] = useState("");
   const [videoList, setVideoList] = useState([]);
+
+  useEffect(() => {
+    console.log('fai vedere suggerimenti di ricerca')
+  }, [title])
 
   const handleTitle = (e) => {
     setTitle(e.target.value)
